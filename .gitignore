@@ -1,0 +1,7 @@
+.*.swp
+/.deps
+/numeric_trim.o
+/numeric_trim.so
+/regression.diffs
+/regression.out
+/results

@@ -1,0 +1,4 @@
+comment = 'numeric_trim'
+default_version = '1.0'
+
+relocatable = true

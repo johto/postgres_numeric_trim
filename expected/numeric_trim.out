@@ -1,0 +1,79 @@
+CREATE EXTENSION numeric_trim;
+SELECT numeric_trim(NULL);
+ numeric_trim 
+--------------
+             
+(1 row)
+
+SELECT numeric_trim('NaN');
+ numeric_trim 
+--------------
+          NaN
+(1 row)
+
+SELECT numeric_trim('0');
+ numeric_trim 
+--------------
+            0
+(1 row)
+
+SELECT numeric_trim('0.0');
+ numeric_trim 
+--------------
+            0
+(1 row)
+
+SELECT numeric_trim('-0.0');
+ numeric_trim 
+--------------
+            0
+(1 row)
+
+SELECT numeric_trim('1000.00');
+ numeric_trim 
+--------------
+         1000
+(1 row)
+
+SELECT numeric_trim('1000.0010');
+ numeric_trim 
+--------------
+     1000.001
+(1 row)
+
+SELECT numeric_trim('1.00000000000000000000000000000000000000000000000000000');
+ numeric_trim 
+--------------
+            1
+(1 row)
+
+SELECT numeric_trim('1.000000000000000000000000000000000000000000000000000001');
+                       numeric_trim                       
+----------------------------------------------------------
+ 1.000000000000000000000000000000000000000000000000000001
+(1 row)
+
+SELECT numeric_trim('-1000.00');
+ numeric_trim 
+--------------
+        -1000
+(1 row)
+
+SELECT numeric_trim('-1000.0010');
+ numeric_trim 
+--------------
+    -1000.001
+(1 row)
+
+SELECT numeric_trim('-1.00000000000000000000000000000000000000000000000000000');
+ numeric_trim 
+--------------
+           -1
+(1 row)
+
+SELECT numeric_trim('-1.000000000000000000000000000000000000000000000000000001');
+                       numeric_trim                        
+-----------------------------------------------------------
+ -1.000000000000000000000000000000000000000000000000000001
+(1 row)
+
